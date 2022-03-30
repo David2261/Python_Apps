@@ -1,5 +1,14 @@
+"""
+ПО позволяет парсить сайты:
+**Без аутентификации, платного контента, систем защиты таких как cloud flare
+"""
 import requests
 from bs4 import BeautifulSoup as BS
+import speedtest
+
+
+test = speedtest.Speedtest()
+
 
 def main():
 	# URL нужно вставить ссылку страницы для парсинга.
@@ -16,3 +25,9 @@ def main():
 
 if __name__  == '__main__':
 	main()
+
+download = test.download()/1025/1024
+upload = test.upload()/1024/1024
+
+print(f'Download speed: {round(download, 2)} Mb/s')
+print(f'Upload speed: {round(upload, 2)} Mb/s')

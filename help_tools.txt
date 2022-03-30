@@ -1,3 +1,37 @@
 
 Сайт для помощи по созданию виртуального окружения python:
 https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+
+
+\n — перенос на новую строку.
+\b — возвращает каретку на один символ назад.
+\t — горизонтальный символ табуляции.
+\a — подает звуковой сигнал.
+\f — переводит каретку на новую строку.
+\v — вертикальный символ табуляции.
+\ — если после него нажать enter, то код перенесется на следующую строку
+\\ — позволяет поставить символ \.
+\’ — позволяет поставить одинарный символ ‘.
+\» — позволяет поставить одинарный символ «.
+
+@ At
+= Equal
+# Hash
+- Dash
+; Semicolon
+, Comma
+% Percent
+_ Underscore
+" Quotation Mark
+. Full stop
+| Bar or pipe
+: Colon
+$ Dollar sign
+& And
+{} Curly Brackets
+[] Square Brackets
+? Question Mark
+/ Slash
+! Exclamation Mark
+> Greater Than
+< Less Than

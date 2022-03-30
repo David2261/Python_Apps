@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class GrabberArticle:
     url = "https://finance.tut.by/news696516.html" # URL статьи, которую хотим обработать.
     filename = "str" # имя файла для сохранения
@@ -43,7 +42,7 @@ def write_in_file(self, text):
     file.write(text)
     file.close()
 
-=======
+
 class GrabberArticle:
     url = "https://finance.tut.by/news696516.html" # URL статьи, которую хотим обработать.
     filename = "str" # имя файла для сохранения
@@ -88,4 +87,3 @@ def write_in_file(self, text):
     file.write(text)
     file.close()
 
->>>>>>> ac668391880eb4d49375ad016d6572ab5044b9a9
