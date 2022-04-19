@@ -1,158 +1,390 @@
-<<<<<<< HEAD
+#import the necessary libraries
+import tkinter
 from tkinter import *
+from tkinter import messagebox
 
-win = Tk() # This is to create a basic window
-win.geometry("312x324")  # this is for the size of the window 
-win.resizable(0, 0)  # this is to prevent from resizing the window
-win.title("Calculator 1.0.0")
+val=""
+A = 0
+operator=""
 
-def btn_click(item):
-    global expression
-    expression = expression + str(item)
-    input_text.set(expression)
+def btn_1_isclicked():
+    global val
+    val = val + "1"
+    data.set(val)
 
-def bt_clear(): 
-    global expression 
-    expression = "" 
-    input_text.set("")
- 
-def bt_equal():
-    global expression
-    result = str(eval(expression))
-    input_text.set(result)
-    expression = ""
- 
-expression = ""
+def btn_2_isclicked():
+    global val
+    val = val + "2"
+    data.set(val)
 
- 
-input_text = StringVar()
- 
-input_frame = Frame(win, width=312, height=50, bd=0, highlightbackground="black", highlightcolor="black", highlightthickness=2)
- 
-input_frame.pack(side=TOP)
- 
-input_field = Entry(input_frame, font=('arial', 18, 'bold'), textvariable=input_text, width=50, bg="#eee", bd=0, justify=RIGHT)
- 
-input_field.grid(row=0, column=0)
- 
-input_field.pack(ipady=10)
- 
-btns_frame = Frame(win, width=312, height=272.5, bg="grey")
- 
-btns_frame.pack()
- 
-clear = Button(btns_frame, text = "C", fg = "black", width = 32, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: bt_clear()).grid(row = 0, column = 0, columnspan = 3, padx = 1, pady = 1)
- 
-divide = Button(btns_frame, text = "/", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("/")).grid(row = 0, column = 3, padx = 1, pady = 1)
+def btn_3_isclicked():
+    global val
+    val = val + "3"
+    data.set(val)
 
-seven = Button(btns_frame, text = "7", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(7)).grid(row = 1, column = 0, padx = 1, pady = 1)
- 
-eight = Button(btns_frame, text = "8", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(8)).grid(row = 1, column = 1, padx = 1, pady = 1)
- 
-nine = Button(btns_frame, text = "9", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(9)).grid(row = 1, column = 2, padx = 1, pady = 1)
- 
-multiply = Button(btns_frame, text = "*", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("*")).grid(row = 1, column = 3, padx = 1, pady = 1)
- 
-four = Button(btns_frame, text = "4", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(4)).grid(row = 2, column = 0, padx = 1, pady = 1)
- 
-five = Button(btns_frame, text = "5", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(5)).grid(row = 2, column = 1, padx = 1, pady = 1)
- 
-six = Button(btns_frame, text = "6", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(6)).grid(row = 2, column = 2, padx = 1, pady = 1)
- 
-minus = Button(btns_frame, text = "-", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("-")).grid(row = 2, column = 3, padx = 1, pady = 1)
- 
- 
-one = Button(btns_frame, text = "1", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(1)).grid(row = 3, column = 0, padx = 1, pady = 1)
- 
-two = Button(btns_frame, text = "2", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(2)).grid(row = 3, column = 1, padx = 1, pady = 1)
- 
-three = Button(btns_frame, text = "3", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(3)).grid(row = 3, column = 2, padx = 1, pady = 1)
- 
-plus = Button(btns_frame, text = "+", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("+")).grid(row = 3, column = 3, padx = 1, pady = 1)
- 
-zero = Button(btns_frame, text = "0", fg = "black", width = 21, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(0)).grid(row = 4, column = 0, columnspan = 2, padx = 1, pady = 1)
- 
-point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click(".")).grid(row = 4, column = 2, padx = 1, pady = 1)
- 
-equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: bt_equal()).grid(row = 4, column = 3, padx = 1, pady = 1)
- 
-=======
-from tkinter import *
+def btn_4_isclicked():
+    global val
+    val = val + "4"
+    data.set(val)
 
-win = Tk() # This is to create a basic window
-win.geometry("312x324")  # this is for the size of the window 
-win.resizable(0, 0)  # this is to prevent from resizing the window
-win.title("Calculator 1.0.0")
+def btn_5_isclicked():
+    global val
+    val = val + "5"
+    data.set(val)
 
-def btn_click(item):
-    global expression
-    expression = expression + str(item)
-    input_text.set(expression)
+def btn_6_isclicked():
+    global val
+    val = val + "6"
+    data.set(val)
 
-def bt_clear(): 
-    global expression 
-    expression = "" 
-    input_text.set("")
- 
-def bt_equal():
-    global expression
-    result = str(eval(expression))
-    input_text.set(result)
-    expression = ""
- 
-expression = ""
+def btn_7_isclicked():
+    global val
+    val = val + "7"
+    data.set(val)
 
- 
-input_text = StringVar()
- 
-input_frame = Frame(win, width=312, height=50, bd=0, highlightbackground="black", highlightcolor="black", highlightthickness=2)
- 
-input_frame.pack(side=TOP)
- 
-input_field = Entry(input_frame, font=('arial', 18, 'bold'), textvariable=input_text, width=50, bg="#eee", bd=0, justify=RIGHT)
- 
-input_field.grid(row=0, column=0)
- 
-input_field.pack(ipady=10)
- 
-btns_frame = Frame(win, width=312, height=272.5, bg="grey")
- 
-btns_frame.pack()
- 
-clear = Button(btns_frame, text = "C", fg = "black", width = 32, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: bt_clear()).grid(row = 0, column = 0, columnspan = 3, padx = 1, pady = 1)
- 
-divide = Button(btns_frame, text = "/", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("/")).grid(row = 0, column = 3, padx = 1, pady = 1)
+def btn_8_isclicked():
+    global val
+    val = val + "8"
+    data.set(val)
 
-seven = Button(btns_frame, text = "7", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(7)).grid(row = 1, column = 0, padx = 1, pady = 1)
- 
-eight = Button(btns_frame, text = "8", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(8)).grid(row = 1, column = 1, padx = 1, pady = 1)
- 
-nine = Button(btns_frame, text = "9", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(9)).grid(row = 1, column = 2, padx = 1, pady = 1)
- 
-multiply = Button(btns_frame, text = "*", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("*")).grid(row = 1, column = 3, padx = 1, pady = 1)
- 
-four = Button(btns_frame, text = "4", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(4)).grid(row = 2, column = 0, padx = 1, pady = 1)
- 
-five = Button(btns_frame, text = "5", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(5)).grid(row = 2, column = 1, padx = 1, pady = 1)
- 
-six = Button(btns_frame, text = "6", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(6)).grid(row = 2, column = 2, padx = 1, pady = 1)
- 
-minus = Button(btns_frame, text = "-", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("-")).grid(row = 2, column = 3, padx = 1, pady = 1)
- 
- 
-one = Button(btns_frame, text = "1", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(1)).grid(row = 3, column = 0, padx = 1, pady = 1)
- 
-two = Button(btns_frame, text = "2", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(2)).grid(row = 3, column = 1, padx = 1, pady = 1)
- 
-three = Button(btns_frame, text = "3", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(3)).grid(row = 3, column = 2, padx = 1, pady = 1)
- 
-plus = Button(btns_frame, text = "+", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click("+")).grid(row = 3, column = 3, padx = 1, pady = 1)
- 
-zero = Button(btns_frame, text = "0", fg = "black", width = 21, height = 3, bd = 0, bg = "#fff", cursor = "hand2", command = lambda: btn_click(0)).grid(row = 4, column = 0, columnspan = 2, padx = 1, pady = 1)
- 
-point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: btn_click(".")).grid(row = 4, column = 2, padx = 1, pady = 1)
- 
-equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "hand2", command = lambda: bt_equal()).grid(row = 4, column = 3, padx = 1, pady = 1)
- 
->>>>>>> ac668391880eb4d49375ad016d6572ab5044b9a9
-win.mainloop()
+def btn_9_isclicked():
+    global val
+    val = val + "9"
+    data.set(val)
+
+def btn_0_isclicked():
+    global val
+    val = val + "0"
+    data.set(val)
+
+def btn_add_clicked():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "+"
+    val = val + "+"
+    data.set(val)
+
+def btn_sub_clicked():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "-"
+    val = val + "-"
+    data.set(val)
+
+def btn_mul_clicked():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "*"
+    val = val + "*"
+    data.set(val)
+
+def btn_div_clicked():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "/"
+    val = val + "/"
+    data.set(val)
+
+def btn_equal_clicked():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "="
+    val = val + "="
+    data.set(val)
+
+def C_pressed():
+    global A
+    global operator
+    global val
+    val = ""
+    A=0
+    operator=""
+    data.set(val)
+
+
+def result():
+    global A
+    global operator
+    global val
+    val2 = val
+    if operator == "+":
+        x=int((val2.split("+")[1]))
+        c = A + x
+        data.set(c)
+        val=str(c)
+    elif operator == "-":
+        x=int((val2.split("-")[1]))
+        c = A - x
+        data.set(c)
+        val=str(c)
+    elif operator == "*":
+        x=int((val2.split("*")[1]))
+        c = A * x
+        data.set(c)
+        val=str(c)
+    elif operator == "/":
+        x=int((val2.split("/")[1]))
+        if x==0:
+            messagebox.showerror("Error","Division by 0 Not Allowed")
+            A==""
+            val=""
+            data.set(val)
+        else:
+            c=int(A/x)
+            data.set(c)
+            val=str(c)
+
+#create a root window
+root = tkinter.Tk()
+#set geometry
+root.geometry("250x400+300+300")
+#disable the resize option for better UI
+root.resizable(0,0)
+#Give the tiltle to your calculator window
+root.title("Investor-Cal")
+
+
+#Label
+data= StringVar()
+lbl=Label(
+    root,
+    text="Label",
+    anchor=SE,
+    font=("Verdana",20),
+    textvariable=data,
+    background="#ffffff",
+    fg="#000000",
+)
+#expand option deals with the expansion of parent widget.
+lbl.pack(expand=True,fill="both",)
+
+
+#Frame Coding for Buttons
+#Frame for root window
+#Frame 1
+btnrow1=Frame(root,bg="pink")
+#If frame gets some space it can expand
+btnrow1.pack(expand=True,fill="both",)
+
+#Frame 2
+btnrow2=Frame(root)
+btnrow2.pack(expand=True,fill="both",)
+
+#Frame 3
+btnrow3=Frame(root)
+btnrow3.pack(expand=True,fill="both",)
+
+#Frame 4
+btnrow4=Frame(root)
+btnrow4.pack(expand=True,fill="both",)
+
+
+#Button row One
+#Button 1
+btn1=Button(
+    btnrow1,
+    text = "1",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_1_isclicked,
+)
+#Buttons will be side by side
+btn1.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 2
+btn2=Button(
+    btnrow1,
+    text = "2",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_2_isclicked,
+)
+#Buttons will be side by side
+btn2.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 3
+btn3=Button(
+    btnrow1,
+    text = "3",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_3_isclicked,
+)
+#Buttons will be side by side
+btn3.pack(side=LEFT,expand=True,fill="both",)
+
+#Button add
+btnadd=Button(
+    btnrow1,
+    text = "+",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_add_clicked,
+)
+#Buttons will be side by side
+btnadd.pack(side=LEFT,expand=True,fill="both",)
+
+#Button row Two
+#Button 4
+btn4=Button(
+    btnrow2,
+    text = "4",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_4_isclicked,
+)
+#Buttons will be side by side
+btn4.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 5
+btn5=Button(
+    btnrow2,
+    text = "5",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_5_isclicked,
+)
+#Buttons will be side by side
+btn5.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 6
+btn6=Button(
+    btnrow2,
+    text = "6",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_6_isclicked,
+)
+#Buttons will be side by side
+btn6.pack(side=LEFT,expand=True,fill="both",)
+
+#Button Subtraction
+btnsub=Button(
+    btnrow2,
+    text = "-",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_sub_clicked,
+)
+#Buttons will be side by side
+btnsub.pack(side=LEFT,expand=True,fill="both",)
+
+#Button row Three
+#Button 7
+btn7=Button(
+    btnrow3,
+    text = "7",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_7_isclicked,
+)
+#Buttons will be side by side
+btn7.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 8
+btn8=Button(
+    btnrow3,
+    text = "8",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_8_isclicked,
+)
+#Buttons will be side by side
+btn8.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 9
+btn9=Button(
+    btnrow3,
+    text = "9",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_9_isclicked,
+)
+#Buttons will be side by side
+btn9.pack(side=LEFT,expand=True,fill="both",)
+
+#Button Multiply
+btnmul=Button(
+    btnrow3,
+    text = "*",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_mul_clicked,
+)
+#Buttons will be side by side
+btnmul.pack(side=LEFT,expand=True,fill="both",)
+
+#Button row Four
+#Button C
+btnC=Button(
+    btnrow4,
+    text = "C",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = C_pressed,
+)
+#Buttons will be side by side
+btnC.pack(side=LEFT,expand=True,fill="both",)
+
+#Button 0
+btn0=Button(
+    btnrow4,
+    text = "0",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_0_isclicked,
+)
+#Buttons will be side by side
+btn0.pack(side=LEFT,expand=True,fill="both",)
+
+#Button Equal to
+btnequal=Button(
+    btnrow4,
+    text = "=",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command=result,
+)
+#Buttons will be side by side
+btnequal.pack(side=LEFT,expand=True,fill="both",)
+
+#Button Divide
+btndiv=Button(
+    btnrow4,
+    text = "/",
+    font = ("Verdana",22),
+    relief =GROOVE,
+    border=0,
+    command = btn_div_clicked,
+    
+)
+#Buttons will be side by side
+btndiv.pack(side=LEFT,expand=True,fill="both",)
+
+
+root.mainloop()
