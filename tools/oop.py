@@ -541,14 +541,17 @@ car_b.vehicle_method() # вызов метода родительского кл
 class Camera:  
     def camera_method(self):
         print("Это родительский метод из класса Camera")
- 
+
+
 class Radio:  
     def radio_method(self):
         print("Это родительский метод из класса Radio")
- 
+
+
 class CellPhone(Camera, Radio):  
-     def cell_phone_method(self):
+    def cell_phone_method(self):
         print("Это дочерний метод из класса CellPhone")
+
 
 cell_phone_a = CellPhone()  
 cell_phone_a.camera_method()  
@@ -638,4 +641,3 @@ print(carA.getCarModel())
 Затем, вам нужно определить свойство атрибута, используя декоратор @property.
 Наконец, вам нужно создать установщик свойства, который является дескриптором @model.setter в примере выше.
 """
->>>>>>> ac668391880eb4d49375ad016d6572ab5044b9a9
