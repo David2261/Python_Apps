@@ -1,11 +1,12 @@
-# Python_Apps
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=F7385B&lines=The+Python+Apps)](https://git.io/typing-svg)
+# Python Applications
+> List of various applications and functions built into python
 
 
 ## Tools
-
-![Sublime Text](https://img.shields.io/badge/sublime_text-%23575757.svg?style=for-the-badge&logo=sublime-text&logoColor=important) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
+- Python 3.10
+- Poetry
+- Pillow
+- Buildozer
 
 
 ## Description
@@ -17,6 +18,7 @@
 	- Parsers
 	- Tools
 	- Types
+	- Applications
 
 
 ```python
