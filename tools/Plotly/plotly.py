@@ -9,8 +9,8 @@ Args: {
 Output: temperature: int
 """
 
-import numpy as np
 import plotly
+import numpy as np
 from stl import mesh
 import plotly.graph_objects as go
 import urllib
