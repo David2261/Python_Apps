@@ -306,22 +306,6 @@ files = [
 ]
 
 [[package]]
-name = "numpy-stl"
-version = "2.17.1"
-description = "Library to make reading, writing and modifying both binary and ascii STL files easy."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "numpy-stl-2.17.1.tar.gz", hash = "sha256:36c920192f445dd57f091a63629bdda5a9274d47513a33ac2efad12737394b7a"},
-    {file = "numpy_stl-2.17.1-py3-none-any.whl", hash = "sha256:c75d4df9cecff7de7bf1e7148dc011c0f4acf9d1c008ef664185c8ecab94ee99"},
-]
-
-[package.dependencies]
-numpy = "*"
-python-utils = ">=1.6.2"
-
-[[package]]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
@@ -409,21 +393,6 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
-name = "plotly"
-version = "5.11.0"
-description = "An open-source, interactive data visualization library for Python"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "plotly-5.11.0-py2.py3-none-any.whl", hash = "sha256:52fd74b08aa4fd5a55b9d3034a30dbb746e572d7ed84897422f927fdf687ea5f"},
-    {file = "plotly-5.11.0.tar.gz", hash = "sha256:4efef479c2ec1d86dcdac8405b6ca70ca65649a77408e39a7e84a1ea2db6c787"},
-]
-
-[package.dependencies]
-tenacity = ">=6.2.0"
-
-[[package]]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -454,23 +423,6 @@ files = [
 six = ">=1.5"
 
 [[package]]
-name = "python-utils"
-version = "3.4.5"
-description = "Python Utils is a module with some convenient utilities not included with the standard Python install"
-category = "main"
-optional = false
-python-versions = ">3.6.0"
-files = [
-    {file = "python-utils-3.4.5.tar.gz", hash = "sha256:7e329c427a6d23036cfcc4501638afb31b2ddc8896f25393562833874b8c6e0a"},
-    {file = "python_utils-3.4.5-py2.py3-none-any.whl", hash = "sha256:22990259324eae88faa3389d302861a825dbdd217ab40e3ec701851b3337d592"},
-]
-
-[package.extras]
-docs = ["mock", "python-utils", "sphinx"]
-loguru = ["loguru"]
-tests = ["flake8", "loguru", "pytest", "pytest-asyncio", "pytest-cov", "pytest-mypy", "sphinx", "types-setuptools"]
-
-[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -482,22 +434,7 @@ files = [
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 
-[[package]]
-name = "tenacity"
-version = "8.1.0"
-description = "Retry code until it succeeds"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "tenacity-8.1.0-py3-none-any.whl", hash = "sha256:35525cd47f82830069f0d6b73f7eb83bc5b73ee2fff0437952cedf98b27653ac"},
-    {file = "tenacity-8.1.0.tar.gz", hash = "sha256:e48c437fdf9340f5666b92cd7990e96bc5fc955e1298baf4a907e3972067a445"},
-]
-
-[package.extras]
-doc = ["reno", "sphinx", "tornado (>=4.5)"]
-
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "a7fed556dc21e7d62d2274c1c4d23756bd81054c770b681de8e8d13514e87b55"
+content-hash = "8de970756bfa9ec6eef7fbcf81cdeb22f9170f12bf39667e672111f6a92951fb"
