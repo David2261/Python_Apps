@@ -11,6 +11,7 @@ python = "^3.9"
 pillow = "^9.2.0"
 numpy = "^1.23.5"
 matplotlib = "^3.6.2"
+aiogram = "^2.25.1"
 
 
 [build-system]
