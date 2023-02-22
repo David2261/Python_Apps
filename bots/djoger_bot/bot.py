@@ -1,10 +1,14 @@
 import time
 import logging
 
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, types
+from aiogram.dispatcher import Dispatcher
+from aiogram.utils import executor
 
+# Token
+from decouple import config
 
-TOKEN = "5837565220:AAEBgqxpNBb9MwUXfPQUaKryHq4WGGL91_c"
+TOKEN = config("API_TELEGRAM_TOKEN", default='')
 MSG = "Введите номер телефона {}: "
 
 bot = Bot(token=TOKEN)
