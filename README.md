@@ -11,7 +11,7 @@
 
 ## Description
 
-*I have created and created many different tools, experiences and applications in Python. Some are lost, and some are preserved. Maybe they will be useful to you now or in future projects*
+*I've created and created many different tools, experiences and applications in Python. Some're lost, and some're preserved. Maybe they'll be useful to you now or in future projects*
 
 - Relevant topics:
 	- Exceptions
@@ -19,6 +19,7 @@
 	- Tools
 	- Types
 	- Applications
+	- Bots
 
 
 ```python
