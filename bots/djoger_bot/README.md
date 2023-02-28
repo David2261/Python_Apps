@@ -18,8 +18,6 @@
 ```bash
 API_TELEGRAM_TOKEN="YOUR-TOKEN-FROM-TELEGRAM"
 ```
-3. Ну если лень, создавать токен, то вот: _5837565220:AAEBgqxpNBb9MwUXfPQUaKryHq4WGGL91\_c_
-
 ## Install
 1. Лучше использовать [Poetry](https://python-poetry.org/ "Залетай посмотри...")
 ```bash
