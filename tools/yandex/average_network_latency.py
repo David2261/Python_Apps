@@ -36,11 +36,18 @@ CREATE TABLE requests (
 После таблица заполняется тестовыми данными.
 
 Формат вывода
-Напишите SELECT выражение, которое вернет таблицу из одной строки с колонкой avg_network_time_ms типа numeric, в которую будет записана средняя сетевая задержка в миллисекундах.
-Внимание! Текст выражения подставится в систему как подзапрос, поэтому завершать выражение точкой с запятой не надо (в противном случае вы получите ошибку Presentation Error).
+Напишите SELECT выражение, которое вернет таблицу из одной строки
+    с колонкой avg_network_time_ms типа numeric, в которую будет
+    записана средняя сетевая задержка в миллисекундах.
+Внимание! Текст выражения подставится в систему как подзапрос,
+    поэтому завершать выражение точкой с запятой не надо (
+        в противном случае вы получите ошибку Presentation Error).
 
 Примечания
-Для таблицы requests с таким содержимым (здесь для компактности пишем числа вместо UUID’а и миллисекунды в datetime, в проверочной таблице будут UUID’ы и timestamp’ы):
+Для таблицы requests с таким содержимым (
+    здесь для компактности пишем числа вместо UUID’а и миллисекунды
+    в datetime, в проверочной таблице будут UUID’ы и timestamp’ы):
+
 datetime	request_id	parent_request_id	host	type	data
 .000	0	NULL	balancer.test.yandex.ru	RequestReceived	
 .100	0	NULL	balancer.test.yandex.ru	RequestSent	backend1.ru
@@ -62,175 +69,22 @@ datetime	request_id	parent_request_id	host	type	data
 .700	5	4	backend1.ru	ResponseSent	
 .710	4	NULL	balancer.test.yandex.ru	ResponseReceived	backend1.ru ERROR
 .715	4	NULL	balancer.test.yandex.ru	ResponseSent	
-запрос участника должен возвращать следующий результат:
-avg_network_time_ms
-149.5
-Тут два корневых запроса. Выпишем времена, которые прошли между отправкой запроса/ответа и его получением.
+запрос участника должен возвращать следующий результат: avg_network_time_ms 149.5
+Тут два корневых запроса. Выпишем времена,
+    которые прошли между отправкой запроса/ответа и его получением.
 
-Запрос с id 
-0
-balancer.test.yandex.ru -> backend1.ru – 
-5
-0
- мс (от 
-.
-1
-0
-0
- до 
-.
-1
-5
-0
-)
-balancer.test.yandex.ru -> backend2.ru – 
-9
-9
- мс (от 
-.
-1
-0
-1
- до 
-.
-2
-0
-0
-)
-backend1.ru -> backend3.ru – 
-4
-5
- мс (от 
-.
-1
-5
-5
- до 
-.
-2
-0
-0
-)
-backend2.ru -> balancer.test.yandex.ru – 
-4
-0
- мс (от 
-.
-2
-1
-0
- до 
-.
-2
-5
-0
-)
-backend3.ru -> backend1.ru – 
-4
-0
- мс (от 
-.
-2
-2
-0
- до 
-.
-2
-6
-0
-)
-backend1.ru -> balancer.test.yandex.ru – 
-1
-0
- мс (от 
-.
-3
-0
-0
- до 
-.
-3
-1
-0
-)
-Суммарно это 
-5
-0
-+
-9
-9
-+
-4
-5
-+
-4
-0
-+
-4
-0
-+
-1
-0
-=
-2
-8
-4
- мс
+Запрос с id 0
+balancer.test.yandex.ru -> backend1.ru – 50 мс (от .100 до .150)
+balancer.test.yandex.ru -> backend2.ru – 99 мс (от .101 до .200)
+backend1.ru -> backend3.ru – 45 мс (от .155 до .200)
+backend2.ru -> balancer.test.yandex.ru – 40 мс (от .210 до .250)
+backend3.ru -> backend1.ru – 40 мс (от .220 до .260)
+backend1.ru -> balancer.test.yandex.ru – 10 мс (от .300 до .310)
+Суммарно это 50+99+45+40+40+10=284 мс
 
-Запрос с id 
-4
-balancer.test.yandex.ru -> backend1.ru – 
-5
- мс (от 
-.
-5
-0
-5
- до 
-.
-5
-1
-0
-)
-backend1.ru -> balancer.test.yandex.ru – 
-1
-0
- мс (от 
-.
-7
-0
-0
- до 
-.
-7
-1
-0
-)
-Суммарно это 
-5
-+
-1
-0
-=
-1
-5
- мс
+Запрос с id 4
+balancer.test.yandex.ru -> backend1.ru – 5 мс (от .505 до .510)
+backend1.ru -> balancer.test.yandex.ru – 10 мс (от .700 до .710)
+Суммарно это 5+10=15 мс
 
-Итого, ответ 
-(
-2
-8
-4
-+
-1
-5
-)
-∕
-2
-=
-1
-4
-9
-.
-5
-.
+Итого, ответ (284+15)∕2=149.5.
