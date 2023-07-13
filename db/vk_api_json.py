@@ -2,7 +2,7 @@ import json
 from random import randint
 from datetime import datetime
 
-# https://oauth.vk.com/blank.html#access_token=vk1.a.ApFlMtkFZVsGn4cMEmpZkY5GkKL8wT-dticoGYd2yb9_PY5GkYftzp-vx3-XCSzzKUgpDRxQRFz2PmEwp__Rdcq4Et70kTcMoIXer_RvUnjwEqcrkPPLDqvvXKREeOEPA2fZ17Nz9XUoD4dL6i-ZcqTYYII4BZzZcPObJ389qxP3R2sX_am_eQh9C8WdSRG9nN3_FTfg_5pGWzuv3aFgjQ&expires_in=86400&user_id=223917500\
+
 str_json = """
 {
     "response": {
