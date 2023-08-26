@@ -17,6 +17,7 @@ django = "^4.1.7"
 sqlalchemy = "^2.0.9"
 mypy = "^1.4.1"
 flake8 = "^6.0.0"
+pyqt5 = "^5.15.9"
 
 
 [build-system]
